@@ -1,0 +1,170 @@
+import fern from '../assets/productsImages/fern.jpg';
+import peaceLily from '../assets/productsImages/peaceLily.jpg';
+import pothos from '../assets/productsImages/pothos.jpg';
+import rubberTree from '../assets/productsImages/rubberTree.jpg';
+import fiddleLeaf from '../assets/productsImages/fiddleLeaf.jpg';
+import dracaena from '../assets/productsImages/dracaena.jpg';
+import snake from '../assets/productsImages/snake.jpg';
+import ponytail from '../assets/productsImages/ponytail.jpg';
+import moneyPlant from '../assets/productsImages/moneyPlant.jpg';
+import zz from '../assets/productsImages/zz.jpg';
+import monstera from '../assets/productsImages/monstera.jpg';
+import monsteraMinima from '../assets/productsImages/monsteraMinima.jpg';
+import satinPothos from '../assets/productsImages/satinPothos.jpg';
+import succulentTrio from '../assets/productsImages/succulentTrio.jpg';
+import cactusTrio from '../assets/productsImages/cactusTrio.jpg';
+
+export default [
+  {
+    id: 1,
+    name: 'Crispy Wave Fern',
+    light: 'Low Light',
+    price: 14.99,
+    purify: true,
+    beginner: true,
+    petFriendly: true,
+    img: fern,
+  },
+  {
+    id: 2,
+    name: 'Peace Lily',
+    light: 'Low to Medium Light',
+    price: 14.99,
+    purify: true,
+    beginner: true,
+    petFriendly: false,
+    img: peaceLily,
+  },
+  {
+    id: 3,
+    name: 'Golden Pothos',
+    light: 'Low to Medium Light',
+    price: 14.99,
+    purify: true,
+    beginner: true,
+    petFriendly: false,
+    img: pothos,
+  },
+  {
+    id: 4,
+    name: 'Rubber Tree',
+    light: 'Medium Light',
+    price: 14.99,
+    purify: true,
+    beginner: true,
+    petFriendly: true,
+    img: rubberTree,
+  },
+  {
+    id: 5,
+    name: 'Fiddle Leaf',
+    light: 'Medium to Bright Light',
+    price: 14.99,
+    purify: false,
+    beginner: false,
+    petFriendly: false,
+    img: fiddleLeaf,
+  },
+  {
+    id: 6,
+    name: 'Dracaena Fragrans',
+    light: 'Low to Medium Light',
+    price: 14.99,
+    purify: false,
+    beginner: true,
+    petFriendly: false,
+    img: dracaena,
+  },
+  {
+    id: 7,
+    name: 'Snake Plant',
+    light: 'Low Light',
+    price: 14.99,
+    purify: true,
+    beginner: true,
+    petFriendly: false,
+    img: snake,
+  },
+  {
+    id: 8,
+    name: 'Pony Tail Palm',
+    light: 'Medium to Bright Light',
+    price: 14.99,
+    purify: false,
+    beginner: true,
+    petFriendly: true,
+    img: ponytail,
+  },
+  {
+    id: 9,
+    name: 'Money Plant',
+    light: 'Medium to Bright Light',
+    price: 14.99,
+    purify: false,
+    beginner: false,
+    petFriendly: true,
+    img: moneyPlant,
+  },
+  {
+    id: 10,
+    name: 'ZZ Plant',
+    light: 'Low to Medium Light',
+    price: 14.99,
+    purify: true,
+    beginner: true,
+    petFriendly: false,
+    img: zz,
+  },
+  {
+    id: 11,
+    name: 'Monstera Deliciosa',
+    light: 'Medium to Bright Light',
+    price: 14.99,
+    purify: false,
+    beginner: false,
+    petFriendly: false,
+    img: monstera,
+  },
+  {
+    id: 12,
+    name: 'Monstera Minima',
+    light: 'Medium to Bright Light',
+    price: 14.99,
+    purify: false,
+    beginner: false,
+    petFriendly: false,
+    img: monsteraMinima,
+  },
+  {
+    id: 13,
+    name: 'Satin Pothos',
+    light: 'Low to Medium Light',
+    price: 14.99,
+    purify: true,
+    beginner: true,
+    petFriendly: false,
+    img: satinPothos,
+  },
+  {
+    id: 14,
+    name: 'Succulent Trio',
+    light: 'Medium Light',
+    price: 14.99,
+    purify: false,
+    beginner: true,
+    petFriendly: false,
+    succulent: true,
+    img: succulentTrio,
+  },
+  {
+    id: 15,
+    name: 'Cactus Trio',
+    light: 'Medium Light',
+    price: 14.99,
+    purify: false,
+    beginner: true,
+    petFriendly: false,
+    succulent: true,
+    img: cactusTrio,
+  },
+];
