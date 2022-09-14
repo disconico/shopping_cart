@@ -12,6 +12,7 @@ const Products = () => {
         key={product.id}
         img={product.img}
         name={product.name}
+        product={product}
       />
     );
   });
