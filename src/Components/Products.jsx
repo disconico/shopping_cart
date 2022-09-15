@@ -1,21 +1,53 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { Context } from '../Context/CartContext';
 
-import data from '../assets/productsData';
 import ProductMiniature from './ProductMiniature';
 
 const Products = () => {
-  const productsArray = data;
+  const { products, filters } = useContext(Context);
+  const [filter, setFilter] = useState(filters[0]);
 
-  const products = productsArray.map((product) => {
+  const productsToDisplay = products.map((product) => {
+    const productsArray = [];
+    if (product[filter] || filter === 'all') {
+      productsArray.push(
+        <ProductMiniature
+          key={product.id}
+          img={product.img}
+          id={product.id}
+          name={product.name}
+        />
+      );
+    }
+    return productsArray;
+  });
+
+  const filtersToDisplay = filters.map((filter) => {
     return (
-      <ProductMiniature
-        key={product.id}
-        img={product.img}
-        name={product.name}
-        product={product}
-      />
+      <button
+        key={filter}
+        onClick={(event) => handleClick(event.target.innerText)}
+      >
+        {filter}
+      </button>
     );
   });
+
+  const handleClick = (newFilter) => {
+    setFilter(newFilter);
+    console.log(filter);
+  };
+
+  // const productsToDisplay = products.map((product) => {
+  //   return (
+  //     <ProductMiniature
+  //       key={product.id}
+  //       img={product.img}
+  //       id={product.id}
+  //       name={product.name}
+  //     />
+  //   );
+  // });
 
   return (
     <div className='products-page'>
@@ -24,16 +56,9 @@ const Products = () => {
         <h3 className='products-page--desc'>
           Shopping for plants has never been easier
         </h3>
-        <div className='products-page--filters'>
-          <ul>
-            <li>Filter a</li>
-            <li>Filter b</li>
-            <li>Filter c</li>
-            <li>Filter d</li>
-          </ul>
-        </div>
+        <div className='products-page--filters'>{filtersToDisplay}</div>
       </div>
-      <div className='products-page--list'>{products}</div>
+      <div className='products-page--list'>{productsToDisplay}</div>
     </div>
   );
 };

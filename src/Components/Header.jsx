@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../Context/CartContext';
 
 const Header = () => {
-  const { numberOfItemsInCart } = useContext(Context);
+  const { totalProducts } = useContext(Context);
 
   return (
     <header className='Header'>
@@ -31,7 +31,7 @@ const Header = () => {
         </div>
         <div className='header--link'>
           <Link to='cart' className='header--link--cart'>
-            <p>My Cart : {numberOfItemsInCart}</p>
+            <p>My Cart : {totalProducts}</p>
             <i className='ri-shopping-cart-line ri-fw ri-2x'></i>
           </Link>
         </div>
