@@ -18,7 +18,7 @@ const ContextProvider = ({ children }) => {
     );
     if (itemID !== -1) {
       // eslint-disable-next-line no-unused-vars
-      const removed = cartCopy.splice(itemID, 1);
+      cartCopy.splice(itemID, 1);
       //   setCartItems((cartCopy)); >> DOESN'T TRIGGER REFRESH FROM STATE
       setCartItems(() => [...cartCopy]);
     }

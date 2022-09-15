@@ -25,7 +25,7 @@ const ProductMiniature = ({ name, img, product }) => {
     <div className='product-miniature'>
       <Link to={`/products/${name}`}>
         <p>{name}</p>
-        <img src={img}></img>
+        <img src={img} className='product-miniature--img'></img>
       </Link>
       <button onClick={() => removeItemFromCart(product)}>-</button>
       <p>{nbOfThisItemInCart}</p>

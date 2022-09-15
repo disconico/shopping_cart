@@ -70,3 +70,20 @@ header {
   justify-content: center;
   gap: 1rem;
 }
+
+.products-page--list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+
+.product-miniature{
+
+}
+
+.product-miniature--img {
+  max-height: 350px;
+  resize: none;
+
+}
