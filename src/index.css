@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');  
+
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
@@ -12,6 +14,7 @@
   -webkit-text-size-adjust: 100%;
 
   --light-blue: #EFFBFE;
+  --custom-grey: #757575;
   --main-color: dark-blue
 }
 
@@ -20,6 +23,14 @@ html, body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.grey {
+  color: var(--custom-grey)
+}
+
+.bold {
+  font-weight: bold;
 }
 
 a {
