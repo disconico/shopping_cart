@@ -1,15 +1,17 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '../Context/CartContext';
+import { FilterContext } from '../Context/FilterContext';
 
 import ProductMiniature from './ProductMiniature';
 
 const Products = () => {
-  const { products, filters } = useContext(Context);
-  const [filter, setFilter] = useState(filters[0]);
+  const { products } = useContext(Context);
+  const { filters, currentFilter, setCurrentFilter } =
+    useContext(FilterContext);
 
   const productsToDisplay = products.map((product) => {
     const productsArray = [];
-    if (product[filter] || filter === 'all') {
+    if (product[currentFilter] || currentFilter === 'all') {
       productsArray.push(
         <ProductMiniature
           key={product.id}
@@ -35,20 +37,8 @@ const Products = () => {
   });
 
   const handleClick = (newFilter) => {
-    setFilter(newFilter);
-    console.log(filter);
+    setCurrentFilter(newFilter);
   };
-
-  // const productsToDisplay = products.map((product) => {
-  //   return (
-  //     <ProductMiniature
-  //       key={product.id}
-  //       img={product.img}
-  //       id={product.id}
-  //       name={product.name}
-  //     />
-  //   );
-  // });
 
   return (
     <div className='products-page'>

@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Context } from '../Context/CartContext';
+import Selector from './Helpers/Selector';
 
 const ProductDetail = () => {
   const { name } = useParams();
@@ -12,6 +13,8 @@ const ProductDetail = () => {
     (prod) => prod.name === name
   );
 
+  const [currentSelection, setCurrentSelection] = useState(1);
+
   // Calculate number of this item in global cart
   let nbOfThisItemInCart = 0;
   cartItems.map((obj) => {
@@ -21,14 +24,20 @@ const ProductDetail = () => {
     return nbOfThisItemInCart;
   });
 
+  // Add product to cart > TODO
+  const handleSelection = (num) => {
+    setCurrentSelection(num);
+  };
+
   return (
     <div>
       <h1>{thisProduct.name}</h1>
-      <p>{thisProduct.id}</p>
+      <p> Current selection is : {currentSelection} </p>
       <p>There is : {nbOfThisItemInCart} in cart</p>
-      <button onClick={() => addItemToCart(thisProduct, 3)}>
-        Add 3 products to cart
+      <button onClick={() => addItemToCart(thisProduct, currentSelection)}>
+        Add {currentSelection} products to cart
       </button>
+      <Selector handleSelection={handleSelection} />
       <button onClick={() => removeAllOfThisItem(thisProduct)}>
         Remove from cart
       </button>

@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 const FilterContext = createContext();
 
 const FilterContextProvider = ({ children }) => {
-  const filters = ['all', 'beginner', 'purify', 'petFriendly'];
-  const [filter, setFilter] = useState(filters[0]);
+  const [filters] = useState(['all', 'beginner', 'purify', 'petFriendly']);
+  const [currentFilter, setCurrentFilter] = useState(filters[0]);
 
   return (
-    <FilterContext.Provider value={{ filter, setFilter }}>
+    <FilterContext.Provider
+      value={{ filters, currentFilter, setCurrentFilter }}
+    >
       {children}
     </FilterContext.Provider>
   );

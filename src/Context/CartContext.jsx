@@ -9,9 +9,6 @@ const ContextProvider = ({ children }) => {
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const products = data;
-  const filters = ['all', 'beginner', 'purify', 'petFriendly'];
-
-  //  Dans chaque cartitem > produit unique avec {id, price, quantity}
 
   // Init empty cart //
   useEffect(() => {
@@ -56,6 +53,7 @@ const ContextProvider = ({ children }) => {
       }
     });
     setCartItems(() => updatedCart);
+    console.log(cartItems);
   };
 
   const removeAllOfThisItem = (item) => {
@@ -105,7 +103,6 @@ const ContextProvider = ({ children }) => {
     <Context.Provider
       value={{
         products,
-        filters,
         cartItems,
         addItemToCart,
         // removeItemFromCart,
