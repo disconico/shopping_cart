@@ -9,9 +9,7 @@ const ProductDetail = () => {
 
   const { cartItems, addItemToCart, removeAllOfThisItem } = useContext(Context);
 
-  const thisProduct = useContext(Context).products.find(
-    (prod) => prod.name === name
-  );
+  const thisProduct = cartItems.find((prod) => prod.name === name);
 
   const [currentSelection, setCurrentSelection] = useState(1);
 
@@ -31,7 +29,9 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <h1>{thisProduct.name}</h1>
+      <h1>
+        {thisProduct.name} : ${thisProduct.itemPrice}
+      </h1>
       <p> Current selection is : {currentSelection} </p>
       <p>There is : {nbOfThisItemInCart} in cart</p>
       <button onClick={() => addItemToCart(thisProduct, currentSelection)}>

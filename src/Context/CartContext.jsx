@@ -1,45 +1,29 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, createContext } from 'react';
 import PropTypes from 'prop-types';
 import data from '../assets/productsData';
 
 const Context = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
-  const [totalProducts, setTotalProducts] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const initCart = data.map((obj) => {
+    return {
+      id: obj.id,
+      name: obj.name,
+      itemPrice: obj.price,
+      img: obj.img,
+      quantity: 1,
+    };
+  });
+  const [cartItems, setCartItems] = useState(initCart);
   const products = data;
 
-  // Init empty cart //
-  useEffect(() => {
-    const emptyCart = products.map((obj) => {
-      return {
-        id: obj.id,
-        name: obj.name,
-        itemPrice: obj.price,
-        quantity: 2,
-      };
-    });
-    setCartItems(emptyCart);
-  }, []);
+  const totalProducts = cartItems.reduce(function (acc, obj) {
+    return acc + parseInt(obj.quantity);
+  }, 0);
 
-  // Update number of items in cart //
-  useEffect(() => {
-    let newTotalProduct = 0;
-    cartItems.map((obj) => {
-      return (newTotalProduct = obj.quantity + newTotalProduct);
-    });
-    setTotalProducts(() => newTotalProduct);
-  }, [cartItems]);
-
-  // Update total price //
-  useEffect(() => {
-    let newTotalPrice = 0;
-    cartItems.map((obj) => {
-      return (newTotalPrice = newTotalPrice + obj.quantity * obj.itemPrice);
-    });
-    setTotalPrice(() => newTotalPrice);
-  }, [cartItems]);
+  const totalPrice = cartItems.reduce(function (acc, obj) {
+    return acc + parseInt(obj.quantity * obj.itemPrice);
+  }, 0);
 
   const addItemToCart = (item, newQuantity) => {
     const updatedCart = [];
@@ -53,7 +37,6 @@ const ContextProvider = ({ children }) => {
       }
     });
     setCartItems(() => updatedCart);
-    console.log(cartItems);
   };
 
   const removeAllOfThisItem = (item) => {

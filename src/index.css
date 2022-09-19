@@ -100,3 +100,17 @@ header {
   resize: none;
 
 }
+
+.cart-items {
+  padding: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+}
+
+.cart-item--img {
+  max-width: 40px;
+}

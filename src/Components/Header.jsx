@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../Context/CartContext';
 
 const Header = () => {
-  const { totalProducts } = useContext(Context);
+  const { totalProducts, totalPrice } = useContext(Context);
 
   return (
     <header className='Header'>
@@ -32,6 +32,7 @@ const Header = () => {
         <div className='header--link'>
           <Link to='cart' className='header--link--cart'>
             <p>My Cart : {totalProducts}</p>
+            <p>{`$${Math.round(totalPrice)}`}</p>
             <i className='ri-shopping-cart-line ri-fw ri-2x'></i>
           </Link>
         </div>

@@ -15,7 +15,7 @@ const Selector = ({ startValue = 1, endValue = 10, handleSelection }) => {
   return (
     <div className='selector'>
       <select value={currentSelect} onChange={handleChange}>
-        {Array.from({ length: endValue - startValue + 1 }).map((_, index) => {
+        {Array.from({ length: 10 }).map((_, index) => {
           return (
             <option key={index} value={index + 1}>
               {index + 1}
