@@ -2,16 +2,21 @@ import React, { useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { Context } from '../Context/CartContext';
-import Selector from './Helpers/Selector';
+import { Context } from '../../Context/CartContext';
+import Selector from '../Helpers/Selector';
+import useHover from '../../hooks/useHover';
 
 const CartItem = ({ item }) => {
   const { img, itemPrice, name, quantity } = item;
   const totalPrice = itemPrice * quantity;
-
   const [currentSelection, setCurrentSelection] = useState(parseInt(quantity));
 
-  const { cartItems, addItemToCart } = useContext(Context);
+  const { cartItems, addItemToCart, removeAllOfThisItem } = useContext(Context);
+
+  const [hovered, ref] = useHover();
+  const iconClassName = hovered
+    ? 'ri-delete-bin-2-fill'
+    : 'ri-delete-bin-2-line';
 
   const thisProduct = cartItems.find((prod) => prod.name === name);
 
@@ -31,11 +36,14 @@ const CartItem = ({ item }) => {
         </Link>
         <p className='cart-item--name'>{name}</p>
         <p className='cart-item--price'>${itemPrice}</p>
-        <p className='cart-item--quantity'>Quantity :{quantity}</p>
         <Selector handleSelection={handleSelection} startValue={quantity} />
-        {/* <button onClick={() => addItemToCart(thisProduct, currentSelection)}>
-          update selection
-        </button> */}
+        <button className='delete-button'>
+          <i
+            className={`binIcon ${iconClassName}`}
+            ref={ref}
+            onClick={() => removeAllOfThisItem(thisProduct)}
+          ></i>
+        </button>
         <p className='cart-item--total'>
           Total : <span>${totalPrice}</span>
         </p>

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Context } from '../Context/CartContext';
-import Selector from './Helpers/Selector';
+import { Context } from '../../Context/CartContext';
+import Selector from '../Helpers/Selector';
 
 const ProductDetail = () => {
   const { name } = useParams();

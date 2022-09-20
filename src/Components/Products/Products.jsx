@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { Context } from '../Context/CartContext';
-import { FilterContext } from '../Context/FilterContext';
+import { Context } from '../../Context/CartContext';
+import { FilterContext } from '../../Context/FilterContext';
 
 import ProductMiniature from './ProductMiniature';
 

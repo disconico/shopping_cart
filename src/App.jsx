@@ -1,13 +1,13 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
+import About from './Components/About';
+import Cart from './Components/Cart/Cart';
+import Contact from './Components/Contact';
 import Header from './Components/Header';
 import Home from './Components/Home';
-import Cart from './Components/Cart';
-import About from './Components/About';
-import Products from './Components/Products';
-import ProductDetail from './Components/ProductDetail';
-import Contact from './Components/Contact';
+import ProductDetail from './Components/Products/ProductDetail';
+import Products from './Components/Products/Products';
 
 const App = () => {
   return (
