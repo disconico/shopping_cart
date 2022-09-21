@@ -11,7 +11,7 @@ const ContextProvider = ({ children }) => {
       name: obj.name,
       itemPrice: obj.price,
       img: obj.img,
-      quantity: 1,
+      quantity: 0,
     };
   });
   const [cartItems, setCartItems] = useState(initCart);
@@ -78,9 +78,9 @@ const ContextProvider = ({ children }) => {
   //   }
   // };
 
-  // const emptyCart = () => {
-  //   setCartItems([]);
-  // };
+  const emptyCart = () => {
+    setCartItems(() => initCart);
+  };
 
   return (
     <Context.Provider
@@ -90,7 +90,7 @@ const ContextProvider = ({ children }) => {
         addItemToCart,
         // removeItemFromCart,
         removeAllOfThisItem,
-        // emptyCart,
+        emptyCart,
         totalProducts,
         totalPrice,
       }}

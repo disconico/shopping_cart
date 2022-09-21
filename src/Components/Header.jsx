@@ -5,11 +5,16 @@ import { Context } from '../Context/CartContext';
 const Header = () => {
   const { totalProducts, totalPrice } = useContext(Context);
 
+  const cartLogo =
+    totalProducts > 0
+      ? 'ri-shopping-cart-fill ri-fw ri-2x'
+      : 'ri-shopping-cart-line ri-fw ri-2x';
+
   return (
     <header className='Header'>
       <div className='header--left'>
         <h2>
-          <Link to='/'>My E-commerce site</Link>
+          <Link to='/'>BIOTYPLANTS</Link>
         </h2>
       </div>
 
@@ -29,11 +34,12 @@ const Header = () => {
             Contact
           </Link>
         </div>
-        <div className='header--link'>
-          <Link to='cart' className='header--link--cart'>
-            <p>My Cart : {totalProducts}</p>
-            <p>{`$${Math.round(totalPrice)}`}</p>
-            <i className='ri-shopping-cart-line ri-fw ri-2x'></i>
+        <div className='header--link--cart'>
+          <p>
+            {totalProducts} items / {`$${Math.round(totalPrice)}`}
+          </p>
+          <Link to='cart'>
+            <i className={cartLogo}></i>
           </Link>
         </div>
       </div>

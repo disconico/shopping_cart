@@ -43,7 +43,7 @@ const Products = () => {
   return (
     <div className='products-page'>
       <div className='product-page--header'>
-        <h1 className='products-page--title'>Products</h1>
+        <h1 className='products-page--title'>Products - {currentFilter}</h1>
         <h3 className='products-page--desc'>
           Shopping for plants has never been easier
         </h3>

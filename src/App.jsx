@@ -5,7 +5,7 @@ import About from './Components/About';
 import Cart from './Components/Cart/Cart';
 import Contact from './Components/Contact';
 import Header from './Components/Header';
-import Home from './Components/Home';
+import Home from './Components/Home/Home';
 import ProductDetail from './Components/Products/ProductDetail';
 import Products from './Components/Products/Products';
 
