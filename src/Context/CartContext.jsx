@@ -11,7 +11,11 @@ const ContextProvider = ({ children }) => {
       name: obj.name,
       itemPrice: obj.price,
       img: obj.img,
+      light: obj.light,
       quantity: 0,
+      purify: obj.purify,
+      beginner: obj.beginner,
+      petFriendly: obj.petFriendly,
     };
   });
   const [cartItems, setCartItems] = useState(initCart);

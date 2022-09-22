@@ -6,11 +6,16 @@ const ProductMiniature = ({ name, img, price }) => {
   return (
     <div className='product-miniature'>
       <Link to={`/products/${name}`}>
-        <img src={img} className='product-miniature--img'></img>
-        <p>{name}</p>
+        <img
+          src={img}
+          className='product-miniature--img'
+          draggable='false'
+        ></img>
       </Link>
-      <p className='bold grey'>${price}</p>
-      {/* <button onClick={() => removeItemFromCart(product)}>-</button> */}
+      <div className='product-miniature--details'>
+        <p>{name}</p>
+        <p className='bold grey'>${price}</p>
+      </div>
     </div>
   );
 };

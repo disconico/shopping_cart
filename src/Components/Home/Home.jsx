@@ -6,6 +6,10 @@ import CollectionComponent from './CollectionComponent';
 import leftImg from '../../assets/images/leftImg.jpg';
 import rightImg from '../../assets/images/rightImg.jpg';
 
+import love1 from '../../assets/images/love1.jpg';
+import love2 from '../../assets/images/love2.jpg';
+import love3 from '../../assets/images/love3.jpg';
+
 const Home = () => {
   const { filters, setCurrentFilter } = useContext(FilterContext);
 
@@ -55,7 +59,10 @@ const Home = () => {
             and inexpensive way to bring the most boring rooms to life.
           </h4>
           <Link to='/products'>
-            <span className='button-span'>
+            <span
+              className='button-span'
+              onClick={() => setCurrentFilter('all')}
+            >
               <span></span>
             </span>
           </Link>
@@ -70,13 +77,47 @@ const Home = () => {
             easier.
           </h4>
           <Link to='/products'>
-            <span className='button-span'>
+            <span
+              className='button-span'
+              onClick={() => setCurrentFilter('purify')}
+            >
               <span></span>
             </span>
           </Link>
         </div>
         <div className='home-purify--right'>
           <img src={rightImg} className='home-img' />
+        </div>
+      </div>
+      <div className='home-love'>
+        <h1>Why You&#39;ll Love Biotyplants</h1>
+        <div className='home-love-main'>
+          <div className='home-love-div'>
+            <img src={love1} alt='' />
+            <h3>Planted with Love</h3>
+            <h5>
+              Our plants cultivated by experts who share the same passion for
+              houseplants as you. We guarantee your plant arrives happy and
+              healthy or your money back!
+            </h5>
+          </div>
+          <div className='home-love-div'>
+            <img src={love2} alt='' />
+            <h3>Sustainable Approach</h3>
+            <h5>
+              Our Eco-Friendly Packaging is 100% biodegradable! Everything we
+              ship can be broken down as fertilizer for your plants!
+            </h5>
+          </div>
+          <div className='home-love-div'>
+            <img src={love3} alt='' />
+            <h3>Hand Crafted</h3>
+            <h5>
+              Materials are sourced locally and hand-crafted by artisans from
+              our community. Each ceramic piece will be unique to your own
+              living space.
+            </h5>
+          </div>
         </div>
       </div>
     </section>

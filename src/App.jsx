@@ -8,6 +8,7 @@ import Header from './Components/Header';
 import Home from './Components/Home/Home';
 import ProductDetail from './Components/Products/ProductDetail';
 import Products from './Components/Products/Products';
+import Footer from './Components/Footer';
 
 const App = () => {
   return (
@@ -23,6 +24,8 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 };

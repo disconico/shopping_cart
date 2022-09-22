@@ -37,7 +37,7 @@ const Cart = () => {
           </div>
           <div className='cart-section--place-order'>
             <span className='button-span' onClick={handleOrder}>
-              <a></a>
+              <span></span>
             </span>
           </div>
           <button onClick={() => emptyCart()}>EMPTY CART</button>

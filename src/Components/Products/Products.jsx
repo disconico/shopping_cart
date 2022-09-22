@@ -25,11 +25,25 @@ const Products = () => {
     return productsArray;
   });
 
+  function magnifyFilter(currentFilter) {
+    switch (currentFilter) {
+      case 'all':
+        return 'All Biotyplants Products';
+      case 'beginner':
+        return 'Products for Beginners';
+      case 'purify':
+        return 'Purifying Plants';
+      case 'petFriendly':
+        return 'Plants for your Monkeys';
+    }
+  }
+
   const filtersToDisplay = filters.map((filter) => {
     return (
       <button
         key={filter}
         onClick={(event) => handleClick(event.target.innerText)}
+        className='filter-button'
       >
         {filter}
       </button>
@@ -43,7 +57,7 @@ const Products = () => {
   return (
     <div className='products-page'>
       <div className='product-page--header'>
-        <h1 className='products-page--title'>Products - {currentFilter}</h1>
+        <h1 className='products-page--title'>{magnifyFilter(currentFilter)}</h1>
         <h3 className='products-page--desc'>
           Shopping for plants has never been easier
         </h3>
