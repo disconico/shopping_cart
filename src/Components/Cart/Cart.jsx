@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
 import { Context } from '../../Context/CartContext';
+
 import CartItem from './CartItem';
 import useAuth from '../../hooks/useOrder';
+
+import plant from '../../assets/images/cart-plant.jpg';
 
 const Cart = () => {
   const { cartItems, emptyCart, totalPrice, totalProducts } =
@@ -28,19 +30,44 @@ const Cart = () => {
 
   return (
     <section className='cart-section'>
-      {!started && (
-        <div>
+      {!started && totalProducts === 0 && (
+        <div className='cart-section--empty'>
+          <div className='cart-section--empty-left'>
+            <h1>Your Cart is Empty</h1>
+            <Link to='/products'>
+              <span className='button-span button-shopping'>
+                <span></span>
+              </span>
+            </Link>
+          </div>
+          <div className='cart-section--empty-right'>
+            <img src={plant} />
+          </div>
+        </div>
+      )}
+      {!started && totalProducts > 0 && (
+        <div className='cart-section--full'>
           <div className='cart-items'>{itemsToDisplay}</div>
           <div className='cart-section--sum-up'>
-            <p>Number of items : {totalProducts}</p>
-            <p>Total price : ${totalPrice}</p>
+            <div className='sum-up--info'>
+              <h1>Number of items : {totalProducts}</h1>
+              <h4>Total price : ${totalPrice}</h4>
+              <h4>Including VAT (${totalPrice / 5})</h4>
+              <h4>Shipping : $4.9</h4>
+              <h1>Total : ${totalPrice + 4.9}</h1>
+            </div>
+            <div className='cart-section--place-order'>
+              <span className='button-span' onClick={handleOrder}>
+                <span></span>
+              </span>
+            </div>
           </div>
-          <div className='cart-section--place-order'>
-            <span className='button-span' onClick={handleOrder}>
-              <span></span>
-            </span>
+
+          <div className='empty-cart'>
+            <button onClick={() => emptyCart()} className='empty-button'>
+              Empty Cart
+            </button>
           </div>
-          <button onClick={() => emptyCart()}>EMPTY CART</button>
         </div>
       )}
       {loading && (
@@ -88,11 +115,22 @@ const Cart = () => {
         </div>
       )}
       {ordered && (
-        <div>
-          <h1>Thanks for the order</h1>
-          <button onClick={handleEndOfOrder}>
-            <Link to='/'>Go back shopping</Link>
-          </button>
+        <div className='ordered'>
+          <div className='ordered--left'>
+            <img src={plant} />
+          </div>
+          <div className='ordered--right'>
+            <h1>Thank you for the order!</h1>
+            <h5>See you soon 😍</h5>
+            <Link to='/'>
+              <span
+                className='button-span button-home'
+                onClick={handleEndOfOrder}
+              >
+                <span></span>
+              </span>
+            </Link>
+          </div>
         </div>
       )}
     </section>
