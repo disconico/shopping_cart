@@ -67,7 +67,7 @@ a:visited {
 }
 
 a:hover {
-  color: var(--light-blue);
+  color: var(--main-color);
 }
 
 a:active {
@@ -91,7 +91,7 @@ header {
   -moz-box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 0.5);
   box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 0.5);
   min-height: fit-content;
-  min-width: 1090px;
+  min-width: 1080px;
   white-space: nowrap;
 }
 
@@ -99,6 +99,24 @@ header {
   font-family: 'Monoton', sans-serif;
   font-size: x-large;
 }
+
+.header--middle {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  color: #000;
+}
+
+/* .header--link:hover {
+  border: 1px solid rgba(255, 114, 125, 0.7);
+  border-radius: 5px;
+  background-color: rgba(255, 114, 125, 0.8)
+}
+
+.header--link {
+  min-width: 100px;
+  text-align: center;
+} */
 
 .header--right {
   display: flex;
@@ -503,7 +521,8 @@ github-icon:hover {
 }
 
 
-.add-to-cart button {
+.add-to-cart button,
+.form-button button {
   background: none;
   color: inherit;
   border: none;
@@ -519,7 +538,8 @@ github-icon:hover {
   cursor: pointer;
 }
 
-.add-to-cart button:hover {
+.add-to-cart button:hover,
+.form-button button:hover {
   color: var(--second-color);
   background-color: white;
   border: 1px solid var(--second-color);
@@ -528,7 +548,8 @@ github-icon:hover {
 .add-to-cart button:active,
 .product-detail--other-buttons button:active,
 .product-page--header button:active,
-.empty-cart button:active {
+.empty-cart button:active ,
+.form-button button:active{
   transform: translateY(4px);
 }
 
@@ -783,7 +804,7 @@ github-icon:hover {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #ff727d;
+  background: rgb(255, 114, 125);
   animation: ldio-6nvuw9l6buc 0.8695652173913042s linear infinite;
 }
 
@@ -939,4 +960,65 @@ github-icon:hover {
 
 .ldio-6nvuw9l6buc div {
   box-sizing: content-box;
+}
+
+.contact-section {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.contact-section h1 {
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.contact-section hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+  width: 50%;
+  border: 2px solid rgba(255, 114, 125, 0.7);
+  margin: 24px auto;
+}
+
+.contact-section--form-div {
+  width: 480px;
+  margin: auto;
+}
+
+.form {
+  line-height: 1.8;
+  text-align: start;
+  padding-left: 5%;
+}
+
+
+.form input,
+textarea {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 90%;
+    height: 1.5rem;
+    padding: 7px;
+    font-size: 14px;
+    margin-bottom: 1rem;
+    margin-top: 2px;
+}
+
+.form input:focus,
+textarea:focus{
+  outline:none;
+  border: 2px solid var(--second-color);
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
 }

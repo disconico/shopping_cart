@@ -18,7 +18,7 @@ const Header = () => {
         </h2>
       </div>
 
-      <div className='header--right'>
+      <div className='header--middle'>
         <div className='header--link'>
           <Link to='/about' className='header--link--about'>
             About
@@ -34,6 +34,8 @@ const Header = () => {
             Contact
           </Link>
         </div>
+      </div>
+      <div className='header--right'>
         <div className='header--link--cart'>
           <p>
             {totalProducts} items / {`$${Math.round(totalPrice)}`}
