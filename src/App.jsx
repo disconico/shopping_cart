@@ -17,7 +17,6 @@ const App = () => {
       <Routes>
         <Route path='/shopping_cart' element={<Home />} />
         <Route path='/shopping_cart/*' element={<Home />} />
-        <Route path='/shopping_cart/about' element={<About />} />
         <Route path='/shopping_cart/products' element={<Products />} />
         <Route
           path='/shopping_cart/products/:name'
