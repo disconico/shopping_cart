@@ -14,23 +14,18 @@ const Header = () => {
     <header className='Header'>
       <div className='header--left'>
         <h2>
-          <Link to='/'>BIOTYPLANTS</Link>
+          <Link to='/shopping_cart'>BIOTYPLANTS</Link>
         </h2>
       </div>
 
       <div className='header--middle'>
         <div className='header--link'>
-          <Link to='/about' className='header--link--about'>
-            About
-          </Link>
-        </div>
-        <div className='header--link'>
-          <Link to='/products' className='header--link--products'>
+          <Link to='/shopping_cart/products' className='header--link--products'>
             Products
           </Link>
         </div>
         <div className='header--link'>
-          <Link to='/contact' className='header--link--contact'>
+          <Link to='/shopping_cart/contact' className='header--link--contact'>
             Contact
           </Link>
         </div>
@@ -40,7 +35,7 @@ const Header = () => {
           <p>
             {totalProducts} items / {`$${Math.round(totalPrice)}`}
           </p>
-          <Link to='cart'>
+          <Link to='/shopping_cart/cart'>
             <i className={cartLogo}></i>
           </Link>
         </div>

@@ -19,7 +19,7 @@ const CollectionComponent = ({ index, filter, onClick }) => {
         src={currentImg}
         className={`home-collection-component-img ${hovered && 'img-hovered'}`}
       ></img>
-      <Link to='/products' onClick={onClick}>
+      <Link to='/shopping_cart/products' onClick={onClick}>
         {hovered && (
           <button className='collection-button'>Shop this Collection</button>
         )}

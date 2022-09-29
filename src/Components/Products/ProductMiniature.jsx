@@ -15,7 +15,7 @@ const ProductMiniature = ({ name, img, price }) => {
           draggable='false'
         ></img>
         {hovered && (
-          <Link to={`/products/${name}`}>
+          <Link to={`/shopping_cart/products/${name}`}>
             <button className='product-button'>Shop Now</button>
           </Link>
         )}

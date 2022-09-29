@@ -34,7 +34,7 @@ const Cart = () => {
         <div className='cart-section--empty'>
           <div className='cart-section--empty-left'>
             <h1>Your Cart is Empty</h1>
-            <Link to='/products'>
+            <Link to='/shopping_cart/products'>
               <span className='button-span button-shopping'>
                 <span></span>
               </span>
@@ -122,7 +122,7 @@ const Cart = () => {
           <div className='ordered--right'>
             <h1>Thank you for the order!</h1>
             <h5>See you soon 😍</h5>
-            <Link to='/'>
+            <Link to='/shopping_cart'>
               <span
                 className='button-span button-home'
                 onClick={handleEndOfOrder}

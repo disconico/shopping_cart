@@ -36,7 +36,7 @@ const Home = () => {
           <div className='home-hero--div--right'>
             <h1>Beautiful Plants Right to your Doorstep</h1>
             <h3>Shopping for Plants Has Never Been Easier</h3>
-            <Link to='/products'>
+            <Link to='/shopping_cart/products'>
               <span className='button-span'>
                 <span></span>
               </span>
@@ -58,7 +58,7 @@ const Home = () => {
             Bring nature home with you. Styling your home with plants is an easy
             and inexpensive way to bring the most boring rooms to life.
           </h4>
-          <Link to='/products'>
+          <Link to='/shopping_cart/products'>
             <span
               className='button-span'
               onClick={() => setCurrentFilter('all')}
@@ -76,7 +76,7 @@ const Home = () => {
             and remove toxins from the air so you can work, breathe, and sleep
             easier.
           </h4>
-          <Link to='/products'>
+          <Link to='/shopping_cart/products'>
             <span
               className='button-span'
               onClick={() => setCurrentFilter('purify')}

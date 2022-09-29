@@ -22,22 +22,31 @@ const Footer = () => {
       </div>
       <div>
         <h3>Biotyplants</h3>
-        <Link to='/about'>
+        <Link to='/shopping_cart/contact'>
           <h5>About Us</h5>
         </Link>
-        <Link to='/contact'>
+        <Link to='/shopping_cart/contact'>
           <h5>Contact</h5>
         </Link>
       </div>
       <div>
         <h3>Shop with us</h3>
-        <Link to='/products' onClick={() => setCurrentFilter('purify')}>
+        <Link
+          to='/shopping_cart/products'
+          onClick={() => setCurrentFilter('purify')}
+        >
           <h5>Air Purifying</h5>
         </Link>
-        <Link to='/products' onClick={() => setCurrentFilter('beginner')}>
+        <Link
+          to='/shopping_cart/products'
+          onClick={() => setCurrentFilter('beginner')}
+        >
           <h5>Beginner Friendly</h5>
         </Link>
-        <Link to='/products' onClick={() => setCurrentFilter('petFriendly')}>
+        <Link
+          to='/shopping_cart/products'
+          onClick={() => setCurrentFilter('petFriendly')}
+        >
           <h5>Pet Friendly</h5>
         </Link>
       </div>

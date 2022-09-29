@@ -16,13 +16,16 @@ const App = () => {
       <Header />
 
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/*' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/products' element={<Products />} />
-        <Route path='/products/:name' element={<ProductDetail />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/shopping_cart' element={<Home />} />
+        <Route path='/shopping_cart/*' element={<Home />} />
+        <Route path='/shopping_cart/about' element={<About />} />
+        <Route path='/shopping_cart/products' element={<Products />} />
+        <Route
+          path='/shopping_cart/products/:name'
+          element={<ProductDetail />}
+        />
+        <Route path='shopping_cart/contact' element={<Contact />} />
+        <Route path='shopping_cart/cart' element={<Cart />} />
       </Routes>
 
       <Footer />
